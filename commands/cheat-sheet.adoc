@@ -38,7 +38,7 @@ To create your app, make sure you’re in the same directory as manage.py and ty
 
 [source]
 ----
-$ python manage.py startapp polls
+$ python manage.py startapp <app_name>
 ----
 
 == Create tables in the database
@@ -56,3 +56,25 @@ To create the tables in the database before we can use them.To do that, run the 
 $ python manage.py migrate
 ----
 
+To view the SQL statement for a migration file:
+
+[source]
+----
+$ python manage.py sqlmigrate <app_name> <migration_file_name>
+----
+
+e.g python manage.py sqlmigrate polls 0001_initial
+
+== Invoke the python shell
+
+[source]
+----
+$ python manage.py shell
+----
+
+== Create a superuser
+
+[source]
+----
+$ python manage.py createsuperuser
+----
