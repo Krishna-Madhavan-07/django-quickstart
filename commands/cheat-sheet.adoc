@@ -1,33 +1,58 @@
-# Django Commands as Cheat Sheet
+= Django Commands as Cheat Sheet
 
-## Create a django project
+== Create a django project
 From the command line, cd into a directory where you’d like to store your code, then run the following command:
-```
+
+[source]
+----
 $ django-admin startproject <mysite>
-```
+----
 
-## Run a django project
+== Run a django project
 From the directory where manage.py resides, run the following command:
-```
-$ python manage.py runserver
-```
 
-## Changing the port
+[source]
+----
+$ python manage.py runserver
+----
+
+== Changing the port
 By default, the runserver command starts the development server on the internal IP at port 8000.
 
-If you want to change the server’s port, pass it as a command-line argument. For instance, this command starts the server on port 8080:
-```
+If you want to change the server’s port, pass it as a command-line argument.For instance, this command starts the server on port 8080:
+
+[source]
+----
 $ python manage.py runserver 8080
-```
-If you want to change the server’s IP, pass it along with the port. For example, to listen on all available public IPs (which is useful if you are running Vagrant or want to show off your work on other computers on the network), use:
-```
+----
+If you want to change the server’s IP, pass it along with the port.For example, to listen on all available public IPs (which is useful if you are running Vagrant or want to show off your work on other computers on the network), use:
+
+[source]
+----
 $ python manage.py runserver 0:8000
-```
+----
 0 is a shortcut for 0.0.0.0
 
-## Create a django app
+== Create a django app
 To create your app, make sure you’re in the same directory as manage.py and type this command:
-```
+
+[source]
+----
 $ python manage.py startapp polls
-```
+----
+
+== Create tables in the database
+By running makemigrations, you’re telling Django that you’ve made some changes to your models (in this case, you’ve made new ones) and that you’d like the changes to be stored as a migration.
+
+[source]
+----
+$ python manage.py makemigrations
+----
+
+To create the tables in the database before we can use them.To do that, run the following command:
+
+[source]
+----
+$ python manage.py migrate
+----
 
